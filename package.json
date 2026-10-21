@@ -1,0 +1,12 @@
+{
+  "name": "galiblog",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler pages dev --local --persist-to .wrangler/state",
+    "deploy": "wrangler pages deploy"
+  },
+  "devDependencies": {
+    "wrangler": "^4.40.0"
+  }
+}

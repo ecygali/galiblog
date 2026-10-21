@@ -1,0 +1,22 @@
+# 本地开发 / 命令行部署用。复制为 wrangler.toml 后填入你自己的 ID。
+# 注意：仓库里一旦存在 wrangler.toml，Cloudflare 控制台里的「绑定」设置就会被它接管。
+# 只用控制台 + Git 自动部署的话，不需要这个文件。
+
+name = "galiblog"
+pages_build_output_dir = "public"
+compatibility_date = "2025-09-01"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "galiblog"
+database_id = "填入 D1 数据库 ID"
+
+# 二选一：R2（推荐，单文件可到 95MB）
+[[r2_buckets]]
+binding = "FILES"
+bucket_name = "galiblog-files"
+
+# 或者 KV（不用绑卡，单文件 25MB 以内）
+# [[kv_namespaces]]
+# binding = "FILES_KV"
+# id = "填入 KV 命名空间 ID"

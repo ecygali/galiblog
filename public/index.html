@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Gali</title>
+  <meta name="description" content="一些不必解释的东西">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml">
+  <style id="theme-vars"></style>
+  <script>
+    // 在样式表加载前套上上次的主题，避免闪一下白
+    try {
+      var cached = localStorage.getItem('gali:theme-css');
+      if (cached) document.getElementById('theme-vars').textContent = cached;
+      var mode = localStorage.getItem('gali:mode') || localStorage.getItem('gali:site-mode');
+      if (mode && mode !== 'auto') document.documentElement.dataset.mode = mode;
+    } catch (e) {}
+  </script>
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="modulepreload" href="/assets/js/app.js">
+</head>
+<body>
+  <div id="progress" aria-hidden="true"></div>
+  <div id="app">
+    <div class="boot">
+      <span class="boot-mark">·</span>
+    </div>
+  </div>
+  <div id="toasts" aria-live="polite"></div>
+  <noscript><p style="padding:2rem">这个站点需要启用 JavaScript。</p></noscript>
+  <script src="/assets/vendor/purify.min.js" defer></script>
+  <script type="module" src="/assets/js/app.js"></script>
+</body>
+</html>
