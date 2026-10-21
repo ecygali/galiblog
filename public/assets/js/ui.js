@@ -109,7 +109,7 @@ export function unlock({ inline = false } = {}) {
         </div>
         <h2>${inline ? '会话过期了' : '先说口令'}</h2>
         <p class="muted">${inline ? '重新输入口令后会继续刚才的操作，写的东西都还在。' : '只有知道口令的人可以在这里落笔。'}</p>
-        <input type="password" name="pw" autocomplete="current-password" placeholder="口令" required>
+        <input type="text" name="pw" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" placeholder="口令" required>
         <label class="check"><input type="checkbox" name="remember" checked><span>在这台设备上记住我（180 天）</span></label>
         <p class="lock-err" aria-live="polite"></p>
         <div class="modal-actions"><button type="button" class="btn ghost" data-close>离开</button><button class="btn solid">解锁</button></div>
